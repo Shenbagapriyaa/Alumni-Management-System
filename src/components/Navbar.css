@@ -1,0 +1,218 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  background: var(--navy-blue); /* Navy Blue header */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  padding: 15px 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--white); /* White text on navy background */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand:hover {
+  color: var(--gold); /* Gold on hover for brand */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-link {
+  color: var(--white); /* White text on navy background */
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1); /* Light transparent overlay */
+  color: var(--gold); /* Gold text on hover */
+}
+
+.nav-link.active {
+  background: var(--gold);
+  color: var(--navy-blue);
+  font-weight: 600;
+}
+
+.welcome-text {
+  color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  font-weight: 500;
+  padding: 8px 16px;
+}
+
+.logout-btn {
+  background: var(--gold); /* Gold accent for logout */
+  color: var(--navy-blue); /* Navy blue text */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600; /* Bolder weight for emphasis */
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: var(--gold-hover); /* Darker gold on hover */
+  transform: translateY(-1px);
+}
+
+/* Mobile menu toggle (optional) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* User profile section */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-blue);
+  font-weight: bold;
+}
+
+/* Badge/notification indicator */
+.notification-badge {
+  position: relative;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 2px solid var(--navy-blue);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--navy-blue);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .user-profile {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Add gold accent to brand logo if needed */
+.nav-logo {
+  color: var(--gold);
+  font-size: 28px;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--white);
+  min-width: 200px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px 0;
+  z-index: 1000;
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  color: var(--charcoal);
+  padding: 10px 20px;
+  display: block;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: var(--off-white);
+  color: var(--navy-blue);
+}
+
+/* Search bar in navbar */
+.nav-search {
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  margin-right: 10px;
+}
+
+.nav-search::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-search:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.15);
+}

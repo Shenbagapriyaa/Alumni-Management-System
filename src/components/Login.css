@@ -1,0 +1,355 @@
+/* src/components/Login.css */
+
+/* Add color variables if not already in global styles */
+:root {
+  --navy-blue: #0A2540;
+  --navy-blue-light: #1a3450;
+  --white: #FFFFFF;
+  --off-white: #F8FAFC;
+  --gold: #F4C430;
+  --gold-hover: #E0B020;
+  --charcoal: #1F2937;
+  --charcoal-light: #374151;
+  --success: #10b981;
+  --danger: #ef4444;
+  --danger-light: #fef2f2;
+}
+
+.login-container {
+  display: flex;
+  min-height: 87vh;
+  max-height: 100vh;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* Left side with image */
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 8% 0 0 8%;
+}
+
+.login-left-content {
+  max-width: 500px;
+  color: var(--white);
+  text-align: center;
+  z-index: 1;
+}
+
+.login-left h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--gold); /* Gold for main heading */
+}
+
+.login-left p {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Right side with login form */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Reduced padding */
+  background: var(--off-white);
+  border-radius: 0 8% 8% 0;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px; /* Reduced padding */
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.login-card h2 {
+  color: var(--navy-blue);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: var(--charcoal-light);
+  font-size: 14px;
+  margin-bottom: 30px; /* Reduced margin */
+  font-weight: 400;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Reduced margin */
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--navy-blue);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px; /* Reduced padding */
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background: var(--off-white);
+  color: var(--charcoal);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--navy-blue);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(10, 37, 64, 0.1);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.alert-danger {
+  background-color: var(--danger-light);
+  border: 1px solid #fed7d7;
+  color: var(--danger);
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.btn-block {
+  width: 100%;
+  padding: 14px; /* Reduced padding */
+  background: var(--navy-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-block:hover {
+  background: var(--gold);
+  color: var(--navy-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 196, 48, 0.3);
+}
+
+.btn-block:active {
+  transform: translateY(0);
+}
+
+/* Forgot password link */
+.forgot-password {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.forgot-password a {
+  color: var(--navy-blue);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+.register-link {
+  margin-top: 20px; /* Reduced margin */
+  padding-top: 20px; /* Reduced padding */
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: var(--charcoal-light);
+  font-size: 13px;
+}
+
+.register-link a {
+  color: var(--navy-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+/* Company branding in login */
+.company-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-text {
+  color: var(--navy-blue);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo-text span {
+  color: var(--gold);
+}
+
+/* Social login options (optional) */
+.social-login {
+  margin-top: 25px;
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.social-divider span {
+  padding: 0 15px;
+  color: var(--charcoal-light);
+  font-size: 13px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: var(--off-white);
+  border-color: var(--navy-blue);
+}
+
+/* Responsive design - optimized to fit screen without scrolling */
+@media (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .login-left, .login-right {
+    padding: 30px 20px;
+    min-height: auto;
+  }
+  
+  .login-left {
+    padding: 40px 20px;
+    flex: none;
+    min-height: 40vh;
+  }
+  
+  .login-right {
+    flex: none;
+    min-height: 60vh;
+  }
+  
+  .login-card {
+    padding: 30px 25px;
+    margin: 0;
+    max-width: 350px;
+  }
+  
+  .login-card h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    flex-direction: column;
+  }
+  
+  .login-left, .login-right {
+    padding: 25px 15px;
+  }
+  
+  .login-left {
+    padding: 30px 15px;
+    min-height: 35vh;
+  }
+  
+  .login-right {
+    min-height: 65vh;
+  }
+  
+  .login-card {
+    padding: 25px 20px;
+  }
+  
+  .login-card h2 {
+    font-size: 22px;
+  }
+  
+  .btn-block {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.login-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.login-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
